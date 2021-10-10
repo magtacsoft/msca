@@ -9,14 +9,14 @@
         <div id="featured-title-inner" class="container clearfix">
             <div class="featured-title-inner-wrap">
                 <div class="featured-title-heading-wrap">
-                    <h1 class="featured-title-heading">{{$title}}</h1>
+                    <h1 class="featured-title-heading">{{$data['title']}}</h1>
                 </div>
                 <div id="breadcrumbs">
                     <div class="breadcrumbs-inner">
                         <div class="breadcrumb-trail">
-                            <a href="http://msca.az" title="Construction" rel="home" class="trail-begin">Əsas səhifə</a>
+                            <a href="{{route('index')}}" title="Construction" rel="home" class="trail-begin">Əsas səhifə</a>
                             <span class="sep">/</span>
-                            <span class="trail-end">{{$title}}</span>
+                            <span class="trail-end">{{$data['title']}}</span>
                         </div>
                     </div>
                 </div>
@@ -41,25 +41,22 @@
                                             <div id="wprt-slider" class="flexslider">
 
                                                 <div class="flex-viewport" style="overflow: hidden; position: relative;"><ul class="slides" style="width: 400%; transition-duration: 0s; transform: translate3d(0px, 0px, 0px);">
+                                                        @foreach($data as $img)
                                                         <li class="modify-images flex-active-slide" style="width: 770px; margin-right: 0px; float: left; display: block;">
-                                                            <a class="zoom" href="http://msca.az/storage/18/beton_sekil1.jpg"><i class="fa fa-arrows-alt"></i></a>
-                                                            <img style="height: 500px" src="http://msca.az/storage/18/beton_sekil1.jpg" alt="image" draggable="false">
+                                                            <a class="zoom" href="{{asset('uploads/'. $data['img'])}}"><i class="fa fa-arrows-alt"></i></a>
+                                                            <img style="height: 500px" src="{{asset('uploads/'. $data['img'])}}" alt="image" draggable="false">
                                                         </li>
-                                                        <li class="modify-images" style="width: 770px; margin-right: 0px; float: left; display: block;">
-                                                            <a class="zoom" href="http://msca.az/storage/19/beton_sekil2.jpg"><i class="fa fa-arrows-alt"></i></a>
-                                                            <img style="height: 500px" src="http://msca.az/storage/19/beton_sekil2.jpg" alt="image" draggable="false">
-                                                        </li>
+                                                        @endforeach
+
                                                     </ul></div><ul class="flex-direction-nav"><li class="flex-nav-prev"><a class="flex-prev flex-disabled" href="#" tabindex="-1"><i class="fa fa-angle-left"></i></a></li><li class="flex-nav-next"><a class="flex-next" href="#"><i class="fa fa-angle-right"></i></a></li></ul></div>
 
                                             <div id="wprt-carousel" class="flexslider">
 
                                                 <div class="flex-viewport" style="overflow: hidden; position: relative;"><ul class="slides" style="width: 400%; transition-duration: 0s; transform: translate3d(0px, 0px, 0px);">
                                                         <li style="width: 142px; margin-right: 15px; float: left; display: block;" class="flex-active-slide">
-                                                            <img src="http://msca.az/storage/18/beton_sekil1.jpg" alt="image" draggable="false">
+                                                            <img src="{{asset('uploads/'. $data['img'])}}" alt="image" draggable="false">
                                                         </li>
-                                                        <li style="width: 142px; margin-right: 15px; float: left; display: block;">
-                                                            <img src="http://msca.az/storage/19/beton_sekil2.jpg" alt="image" draggable="false">
-                                                        </li>
+
                                                     </ul></div><ul class="flex-direction-nav"><li class="flex-nav-prev"><a class="flex-prev flex-disabled" href="#" tabindex="-1"><i class="fa fa-angle-left"></i></a></li><li class="flex-nav-next"><a class="flex-next flex-disabled" href="#" tabindex="-1"><i class="fa fa-angle-right"></i></a></li></ul></div>
                                         </div>
                                     </div><!-- /.col-md-8 -->
@@ -74,7 +71,7 @@
                                         </div>
 
                                         <div class="wprt-spacer" data-desktop="25" data-mobi="25" data-smobi="25" style="height:25px"></div>
-                                        <p><span style="color: rgb(119, 119, 119);">MSCA Beton Zavodu 2018-ci ildə Bakı şəhərində açılmışdır. MSCA şirkətlər qrupunun uğurlu inkişafında MSCA Beton zavodu böyük əhəmiyyət daşıyır. Beton zavodunun bütün lazım olan avadanlıqla təchiz olunmuşdur, işçi heyəti işə yüksək ixtisas dərəcəsinə malikdir Bu gun biz inşaatçıları istənilən ölçüdə betonla təchiz edə bilərik. Bundan əlavə betonun müasir müasir çatdırılması üsulu tikinti sahəsində gecikmələrin qarşısını alır. Beton istehsalı. Almaniyada istehsal olunmuş Liebherr markalı avadanlıqlardan istifadə olunaraq, həyata keçirilir. Beton istehsalında yalnız keyfiyyətli materiallardan istifadə olunur. Betonun tərkibi müəyyən olunmuş dövlət standartlarına uyğun olaraq təyin olunur. Zavodumuzda istehsal olunan betona kimyəvi maddələrdə əlavə olunur ki, bu da istehsal olunan məhsulun keyfiyyətini artırmağa imkan verir. Beton zavodumuz M100-M700 markali beton istehsal edir.</span></p>
+                                            {!! $data['text'] !!}
                                         <div class="wprt-lines style-1 custom-4">
                                             <div class="line-1"></div>
                                         </div>

@@ -9,14 +9,14 @@
         <div id="featured-title-inner" class="container clearfix">
             <div class="featured-title-inner-wrap">
                 <div class="featured-title-heading-wrap">
-                    <h1 class="featured-title-heading">{{$title}}</h1>
+                    <h1 class="featured-title-heading">{{$data['title']}}</h1>
                 </div>
                 <div id="breadcrumbs">
                     <div class="breadcrumbs-inner">
                         <div class="breadcrumb-trail">
-                            <a href="http://msca.az" title="Construction" rel="home" class="trail-begin">Əsas səhifə</a>
+                            <a href="{{route('index')}}" title="Construction" rel="home" class="trail-begin">Əsas səhifə</a>
                             <span class="sep">/</span>
-                            <span class="trail-end">{{$title}}</span>
+                            <span class="trail-end">{{$data['title']}}</span>
                         </div>
                     </div>
                 </div>

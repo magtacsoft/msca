@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Page;
+use App\Models\Project;
 use App\Models\Slider;
 use Illuminate\Http\Request;
 
@@ -23,39 +24,39 @@ class FrontController extends Controller
     }
 
     public function service(){
-        $data = [
-            'title'=> 'Xidmətlər'
-        ];
-        return view('front.services' ,  $data, compact('data'));
+
+      $data = Page::find(6);
+
+        return view('front.services' ,  ['data' => $data]);
     }
     public function projects(){
-        $data = [
-            'title'=> 'Layihələr'
-        ];
-        return view('front.projects' ,$data, compact('data'));
+       $data = Page::find('5');
+        $project = Project::all();
+
+        return view('front.projects' ,['data' => $data , 'project' => $project]);
     }
     public function betonZavod(){
-        $data = [
-            'title'=> 'Beton Zavod'
-        ];
-        return  view('front.betonZavod' ,$data, compact('data'));
+        $data = Page::find(4);
+
+        return  view('front.betonZavod' , ['data' => $data]);
     }
     public function contact(){
         $data = [
             'title'=> 'Əlaqə'
         ];
-        return view('front.contact', $data, compact('data'));
+        return view('front.contact', ['data' => $data]);
     }
     public function ekinSaheleri(){
-        $data = [
-            'title'=> 'Əkin Sahələri'
-        ];
-        return view('front.sahe', $data, compact('data'));
+        $data = Page::find(2);
+
+
+
+        return   view('front.sahe' , ['data' => $data]);
+
     }
     public function agro(){
-        $data = [
-            'title'=> 'Agro Servis'
-        ];
-        return view('front.agroServis', $data, compact('data'));
+        $data = Page::find(3);
+
+        return view('front.agroServis',  ['data' => $data]);
     }
 }
