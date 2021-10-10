@@ -29,17 +29,17 @@
     </div><!-- /#top-bar -->
 
     <!-- Header -->
-    <header id="site-header" class="header-front-page style-5">
-        <div id="site-header-inner" class="container">
-            <div class="wrap-inner">
-                <div id="site-logo" class="clearfix">
-                    <div id="site-logo-inner">
-                        <a href="{{route('index')}}" title="Construction" rel="home" class="main-logo">
-                            <img src="assets/img/logo-light.png" alt="Construction"
-                                 data-retina="assets/img/logo-light@2x.png" data-width="200" data-height="30">
-                        </a>
-                    </div>
-                </div><!-- /#site-logo -->
+
+                <header id="site-header" class="header-front-page style-5">
+                    <div id="site-header-inner" class="container">
+                        <div class="wrap-inner">
+                            <div id="site-logo" class="clearfix">
+                                <div id="site-logo-inner" >
+                                    <a href="{{route('index')}}" title="Construction" rel="home" class="main-logo">
+                                        <img  style="height:70px" src="{{asset('uploads/msca-logo.png')}}" alt="Construction" data-retina="{{asset('uploads/msca-logo.png')}}" data-width="200" data-height="30">
+                                    </a>
+                                </div>
+                            </div><!-- /#site-logo -->
 
                 <div class="mobile-button"><span></span></div><!-- //mobile menu button -->
 

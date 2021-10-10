@@ -11,7 +11,8 @@ class FrontController extends Controller
 {
     public function home(){
         $data = Slider::all();
-        return view('front.index' , ['data' => $data]);
+        $page = Page::find(1);
+        return view('front.index' , ['data' => $data , 'page'=> $page]);
     }
     public function about(){
         $data = Page::find(1);

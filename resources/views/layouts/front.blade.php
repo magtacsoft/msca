@@ -14,7 +14,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
     <!-- Theme Style -->
-    <link rel="stylesheet" type="text/css" href="{{asset('style.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('style.css?' . 'v' . time() )}}">
 
     <!-- Favicon and touch icons  -->
     <link rel="shortcut icon" href="{{asset('assets/icon/favicon.png')}}">
@@ -25,6 +25,14 @@
     <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+    <style>
+        .partner-item img {
+            width: 100% !important;
+            height: auto !important;
+        }
+    </style>
+
+    <style id="fit-vids-style">.fluid-width-video-wrapper{width:100%;position:relative;padding:0;}.fluid-width-video-wrapper iframe,.fluid-width-video-wrapper object,.fluid-width-video-wrapper embed {position:absolute;top:0;left:0;width:100%;height:100%;}</style>
 </head>
 
 <body class="front-page no-sidebar site-layout-full-width header-style-5 menu-has-search menu-has-cart header-sticky">
