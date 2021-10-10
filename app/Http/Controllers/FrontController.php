@@ -2,18 +2,24 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Page;
+use App\Models\Slider;
 use Illuminate\Http\Request;
 
 class FrontController extends Controller
 {
     public function home(){
-        return view('front.index');
+        $data = Slider::all();
+        return view('front.index' , ['data' => $data]);
     }
     public function about(){
+        $data = Page::find(1);
         $data = [
-            'title'=> 'Haqqımızda'
+            'title'=> $data->title,
+            'text'=>$data->text,
+            'img'=>$data->img
         ];
-        return view('front.about' , $data,  compact('data'));
+        return view('front.about', ['data' => $data]);
     }
 
     public function service(){

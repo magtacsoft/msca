@@ -4,7 +4,12 @@
 @endsection
 
 @section('content')
-    <div id="hero-section" data-number="3" data-image-1="assets/img/slider/3.jpg" data-image-2="assets/img/slider/4.jpg" data-image-3="assets/img/slider/5.jpg" data-effect="fade">
+
+    <div id="hero-section" data-number="{{$data->count()}}"
+         @foreach($data as $item)
+         data-image-{{$loop->iteration}}="{{asset('uploads/' . $item->img)}}"
+         @endforeach
+          data-effect="fade">
         <div class="hero-content">
             <div class="hero-title scroll" data-min="28px" data-max="80px">
                 <h1>WELCOME</h1>
