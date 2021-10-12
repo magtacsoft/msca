@@ -19,7 +19,7 @@ class FrontController extends Controller
         $data = [
             'title'=> $data->title,
             'text'=>$data->text,
-            'img'=>$data->img
+            'img'=> $data->img
         ];
         return view('front.about', ['data' => $data]);
     }

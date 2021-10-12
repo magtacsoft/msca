@@ -1,13 +1,18 @@
 <!DOCTYPE html>
-<!--[if IE 8 ]><html class="ie" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US"> <![endif]-->
-<!--[if (gte IE 9)|!(IE)]><!--><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US"><!--<![endif]-->
+<!--[if IE 8 ]>
+<html class="ie" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US"><!--<![endif]-->
 <head>
     <!-- Basic Page Needs -->
     <meta charset="utf-8">
-    <!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
+    <!--[if IE]>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
     <title>MSCA</title>
-    <meta name="description" content="Template built for Construction Company, Building Services, Architecture, Engineering, Cleaning Service and other Construction related services">
-    <meta name="keywords" content=" architecture, builder, building, building company, cleaning services, construction, construction business, construction company">
+    <meta name="description"
+          content="Template built for Construction Company, Building Services, Architecture, Engineering, Cleaning Service and other Construction related services">
+    <meta name="keywords"
+          content=" architecture, builder, building, building company, cleaning services, construction, construction business, construction company">
     <meta name="author" content="blogwp.com">
 
     <!-- Mobile Specific Metas -->
@@ -32,7 +37,19 @@
         }
     </style>
 
-    <style id="fit-vids-style">.fluid-width-video-wrapper{width:100%;position:relative;padding:0;}.fluid-width-video-wrapper iframe,.fluid-width-video-wrapper object,.fluid-width-video-wrapper embed {position:absolute;top:0;left:0;width:100%;height:100%;}</style>
+    <style id="fit-vids-style">.fluid-width-video-wrapper {
+            width: 100%;
+            position: relative;
+            padding: 0;
+        }
+
+        .fluid-width-video-wrapper iframe, .fluid-width-video-wrapper object, .fluid-width-video-wrapper embed {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }</style>
 </head>
 
 <body class="front-page no-sidebar site-layout-full-width header-style-5 menu-has-search menu-has-cart header-sticky">
@@ -40,21 +57,24 @@
 <div id="wrapper" class="animsition">
     <div id="page" class="clearfix">
 
-       @yield('header')
+    @yield('header')
 
-        <!-- Hero Background SlideShow -->
-       @yield('content')
+    <!-- Hero Background SlideShow -->
+    @yield('content')
 
-        <!-- Footer -->
+    <!-- Footer -->
         <footer id="footer">
             <div id="footer-widgets" class="container style-1">
                 <div class="row">
                     <div class="col-md-4">
                         <div class="widget widget_text">
-                            <h2 class="widget-title"><span>ABOUT US</span></h2>
+                            <h2 class="widget-title"><span>Haqqımızda</span></h2>
                             <div class="textwidget">
-                                <img src="{{asset('assets/img/logo-light@2x.png')}}" width="200" height="30" alt="image" class="margin-top-5 margin-bottom-25" />
-                                <p>Building isn’t just a job. At the Construction Company, it is our passion. With every project we undertake, we set the bar high and provide the best people in the industry, with a true love of what we do to make our Customers’ vision a reality.</p>
+
+                                <img src="{{asset('uploads/' . $page['img'])}}" width="200" height="30" alt="image"
+                                     class="margin-top-5 margin-bottom-25"/>
+                                <p>Modern Style Construction Agro MMC yeni istehsal sahələri yaradaraq, qabaqcıl və
+                                    müasir texnologiyaları tətbiq edərək etibarlı tərəfdaş kimi nüfuz qazanır..</p>
 
                             </div>
                         </div>
@@ -62,31 +82,24 @@
 
                     <div class="col-md-4">
                         <div class="widget widget_links">
-                            <h2 class="widget-title"><span>COMPANY LINKS</span></h2>
+                            <h2 class="widget-title"><span>Keçidlər</span></h2>
                             <ul class="wprt-links clearfix col2">
-                                <li class="style-2"><a href="#">History</a></li>
-                                <li class="style-2"><a href="#">Services</a></li>
-                                <li class="style-2"><a href="#">Team & Awards</a></li>
-                                <li class="style-2"><a href="#">Delivery Methods</a></li>
-                                <li class="style-2"><a href="#">Community</a></li>
-                                <li class="style-2"><a href="#">Safety</a></li>
-                                <li class="style-2"><a href="#">News & Events</a></li>
-                                <li class="style-2"><a href="#">Sustainability</a></li>
-                                <li class="style-2"><a href="#">FAQ</a></li>
-                                <li class="style-2"><a href="#">Portfolio</a></li>
-                                <li class="style-2"><a href="#">Contact Us</a></li>
-                                <li class="style-2"><a href="#">Shop</a></li>
+                                @foreach(\App\Models\Menu::orderBy('ordering' , 'desc')->get()->except([4,5,8]) as $item)
+                                    <li class="style-2"><a href="{{$item->path}}">{{$item->title}}</a></li>
+                                @endforeach
+
                             </ul>
                         </div>
                     </div>
 
                     <div class="col-md-4">
                         <div class="widget widget_information">
-                            <h2 class="widget-title"><span>CONTACT INFO</span></h2>
+                            <h2 class="widget-title"><span>Əlaqə</span></h2>
                             <ul class="style-2">
                                 <li class="address clearfix">
                                     <span class="hl">Address:</span>
-                                    <span class="text">1379 Shoreline Parkway, Mountain View, CA 94043, United States</span>
+                                    <span
+                                        class="text">1379 Shoreline Parkway, Mountain View, CA 94043, United States</span>
                                 </li>
                                 <li class="phone clearfix">
                                     <span class="hl">Phone:</span>
