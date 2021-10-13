@@ -22,3 +22,7 @@ Route::get('ekin-saheleri', [FrontController::class, 'ekinSaheleri'])->name('eki
 Route::get('agro-servis', [FrontController::class, 'agro'])->name('agro-servis');
 Route::get('contact', [FrontController::class, 'contact'])->name('contact');
 
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
