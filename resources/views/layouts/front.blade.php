@@ -73,7 +73,7 @@
                             <h2 class="widget-title"><span>Haqqımızda</span></h2>
                             <div class="textwidget">
 
-                                <img src="{{asset('uploads/' . $page['img'])}}" width="200" height="30" alt="image"
+                                <img src="{{asset('uploads/' . $data['img'])}}" width="200" height="30" alt="image"
                                      class="margin-top-5 margin-bottom-25"/>
                                 <p>Modern Style Construction Agro MMC yeni istehsal sahələri yaradaraq, qabaqcıl və
                                     müasir texnologiyaları tətbiq edərək etibarlı tərəfdaş kimi nüfuz qazanır..</p>

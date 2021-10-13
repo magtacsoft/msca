@@ -11,11 +11,12 @@ class FrontController extends Controller
 {
     public function home(){
         $data = Slider::all();
-        $page = Page::find(1);
+        $page = Page::find(9);
         return view('front.index' , ['data' => $data , 'page'=> $page]);
     }
     public function about(){
-        $data = Page::find(1);
+        $data = Page::find(9);
+
         $data = [
             'title'=> $data->title,
             'text'=>$data->text,
@@ -26,18 +27,18 @@ class FrontController extends Controller
 
     public function service(){
 
-      $data = Page::find(6);
+      $data = Page::find(14);
 
         return view('front.services' ,  ['data' => $data]);
     }
     public function projects(){
-       $data = Page::find('5');
+       $data = Page::find('13');
         $project = Project::all();
 
         return view('front.projects' ,['data' => $data , 'project' => $project]);
     }
     public function betonZavod(){
-        $data = Page::find(4);
+        $data = Page::find(12);
 
         return  view('front.betonZavod' , ['data' => $data]);
     }
@@ -48,7 +49,7 @@ class FrontController extends Controller
         return view('front.contact', ['data' => $data]);
     }
     public function ekinSaheleri(){
-        $data = Page::find(2);
+        $data = Page::find(10);
 
 
 
@@ -56,7 +57,7 @@ class FrontController extends Controller
 
     }
     public function agro(){
-        $data = Page::find(3);
+        $data = Page::find(11);
 
         return view('front.agroServis',  ['data' => $data]);
     }
