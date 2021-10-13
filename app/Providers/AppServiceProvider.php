@@ -4,6 +4,8 @@ namespace App\Providers;
 
 use App\Models\Menu;
 use App\Models\Page;
+use App\Models\Partner;
+use App\Models\Project;
 use App\Models\Service;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Facades\Schema;
@@ -41,6 +43,11 @@ class AppServiceProvider extends ServiceProvider
             $view->with('service',$service);
             $view->with('menu', $menu);
             $view->with('agro',Menu::find([4,5]));
+            $view->with('page', Page::find(9));
+            $view->with('partner', Partner::all());
+            $view->with('projects', Project::all());
+          //  dd( Partner::all());
+
             //dd(Menu::find([4,5]));
 
         });

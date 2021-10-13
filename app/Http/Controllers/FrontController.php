@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Page;
+use App\Models\Partner;
 use App\Models\Project;
 use App\Models\Slider;
 use Illuminate\Http\Request;
@@ -12,7 +13,9 @@ class FrontController extends Controller
     public function home(){
         $data = Slider::all();
         $page = Page::find(9);
-        return view('front.index' , ['data' => $data , 'page'=> $page]);
+
+
+        return view('front.index' , ['data' => $data , 'page'=> $page ]);
     }
     public function about(){
         $data = Page::find(9);
